@@ -26,11 +26,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+ Sessions are stored in a server and JWTs are stored in the client. Session data is created when logging in and a session id is stored in a cookie on the browser. The cookie gets compared to the server data every request. 
+ 
+ With tokens, when a user registers, the user data gets hashed and saved as a JWT. The JWT is sent as a header on each request and it get validated before sending a response. 
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+
+Bcrypt hases the password before it get saved in a database.
 
 3. How are unit tests different from integration and end-to-end testing.
 
+A unit test is testing one thing seperately. Integration tests are used to make sure things working in tandem. End to End testing is used to test every thing and simulates a users experience.
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+With TDD you create a test first and then write code until it passes the tests.
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
