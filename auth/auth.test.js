@@ -22,8 +22,6 @@ describe("auth router", () => {
 
             expect(res.status).toBe(201);
         })
-    })
-    describe("POST /login", () => {
         it("should return json", async () => {
             await request(server)
                 .post("/api/auth/register").send({
@@ -34,6 +32,8 @@ describe("auth router", () => {
                     expect(res.type).toMatch(/json/i)
                 })
         })
+    })
+    describe("POST /login", () => {
         it("should return 200", async done => {
             await request(server).post("/api/auth/register").send({
                 username:"jest200",
