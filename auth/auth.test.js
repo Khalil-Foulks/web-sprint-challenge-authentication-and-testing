@@ -50,5 +50,22 @@ describe("auth router", () => {
                     done();
                 });
         })
+        it("should contain a message", async () => {
+            await request(server)
+                .post("/api/auth/register").send({
+                username:"jest2",
+                password:"hashedpass"
+                })
+
+            await request(server)
+                .post("/api/auth/login").send({
+                username:"jest2",
+                password:"hashedpass"
+                })
+                .then(res => {
+                    const expected = {message: "welcome to the API"}
+                    expect(res.body).toMatchObject(expected)
+                })
+        })
     })
 })
